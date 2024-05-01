@@ -63,7 +63,6 @@ import net.naughtyklaus.depot.model.item.ItemResource;
 import net.naughtyklaus.depot.model.item.OrderContainer;
 import net.runelite.api.Client;
 import net.runelite.api.ItemComposition;
-import net.runelite.client.account.SessionManager;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.eventbus.EventBus;
 import net.runelite.client.eventbus.Subscribe;
@@ -171,7 +170,7 @@ public class DepotPanel extends PluginPanel {
     public DepotOrderItemPanel lastSelectedOrderItem;
 
     @Inject
-    public DepotPanel(DepotPlugin plugin, @Nullable Client client, EventBus eventBus, SessionManager sessionManager, ScheduledExecutorService executor)
+    public DepotPanel(DepotPlugin plugin, @Nullable Client client, EventBus eventBus, ScheduledExecutorService executor)
     {
         this.plugin = plugin;
         this.client = client;
@@ -403,7 +402,6 @@ public class DepotPanel extends PluginPanel {
     private final DepotPlugin plugin;
     private final EventBus eventBus;
 
-    private SessionManager sessionManager;
     public ScheduledExecutorService executor;
 
     @Inject
