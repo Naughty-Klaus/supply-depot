@@ -91,15 +91,18 @@ import okhttp3.*;
 @Getter
 public class DepotPanel extends PluginPanel {
 
-    @Getter
-    private static final OkHttpClient httpClient = new OkHttpClient();
+    @Inject
+    public Gson gson;
 
-    public static OrderContainer[] getOrderContainer() throws IOException {
+    @Getter
+    @Inject
+    private OkHttpClient httpClient;
+
+    public OrderContainer[] getOrderContainer() throws IOException {
         String url = "http://depot.naughtyklaus.net:43658/api/orders";
         Request request = new Request.Builder().url(url).build();
 
         try (Response response = getHttpClient().newCall(request).execute()) {
-            Gson gson = new Gson();
 
             // Deserialize JSON string into an array of objects
             return gson.fromJson(response.body().string(), OrderContainer[].class);
@@ -112,7 +115,6 @@ public class DepotPanel extends PluginPanel {
 
         String url = "http://depot.naughtyklaus.net:43658/api/order/" + container.getDisplayName();
 
-        Gson gson = new Gson();
         String jsonString = gson.toJson(container);
 
         // Create RequestBody
