@@ -17,8 +17,6 @@ public class IntegerDocumentFilter extends DocumentFilter {
 
         if (test(sb.toString())) {
             super.insertString(fb, offset, string, attr);
-        } else {
-            // warn the user and don't allow the insert
         }
     }
 
@@ -42,10 +40,7 @@ public class IntegerDocumentFilter extends DocumentFilter {
 
         if (test(sb.toString())) {
             super.replace(fb, offset, length, text, attrs);
-        } else {
-            // warn the user and don't allow the insert
         }
-
     }
 
     @Override
@@ -58,9 +53,6 @@ public class IntegerDocumentFilter extends DocumentFilter {
 
         if (test(sb.toString())) {
             super.remove(fb, offset, length);
-        } else {
-            // warn the user and don't allow the insert
         }
-
     }
 }

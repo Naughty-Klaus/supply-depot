@@ -22,6 +22,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+
 package net.naughtyklaus.depot;
 
 import lombok.extern.slf4j.Slf4j;
@@ -45,7 +46,6 @@ public class JRichTextPane extends JEditorPane {
         setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
         HTMLEditorKit ek = (HTMLEditorKit) getEditorKitForContentType("text/html");
         ek.getStyleSheet().addRule("a {color: #DDDDDD; }");
-        ek.getStyleSheet().addRule("#requested { color: #FBCF35; }");
     }
 
     public JRichTextPane(String type, String text) {

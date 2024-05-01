@@ -1,6 +1,7 @@
 /*
  * Copyright (c) 2018, Seth <https://github.com/sethtroll>
  * Copyright (c) 2018, Psikoi <https://github.com/psikoi>
+ * Copyright (c) 2024, Naughty Klaus <https://github.com/Naughty-Klaus>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
